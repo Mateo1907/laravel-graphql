@@ -1,10 +1,7 @@
 <?php
 
 
-use example\Mutation\ExampleMutation;
-use example\Query\ExampleQuery;
-use example\Type\ExampleRelationType;
-use example\Type\ExampleType;
+
 
 return [
 
@@ -100,10 +97,9 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                'example_query' => ExampleQuery::class,
+                'users' => 'App\GraphQL\Query\UsersQuery',
             ],
             'mutation' => [
-                'example_mutation'  => ExampleMutation::class,
             ],
             'middleware' => [],
             'method' => ['get', 'post'],
@@ -120,8 +116,7 @@ return [
     // ]
     //
     'types' => [
-        'example'           => ExampleType::class,
-        'relation_example'  => ExampleRelationType::class,
+        'user' => 'App\GraphQL\Type\UserType',
     ],
 
     // This callable will be passed the Error object for each errors GraphQL catch.
