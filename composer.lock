@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f413b78281049bfab9af9c50e068abfa",
+    "content-hash": "f36f40fbed08ae861e9b216c6bfeb478",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -743,69 +743,17 @@
             "time": "2018-10-15T13:53:10+00:00"
         },
         {
-            "name": "mll-lab/laravel-graphql-playground",
-            "version": "v0.3.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mll-lab/laravel-graphql-playground.git",
-                "reference": "390b678a3e423d80d349e1fa61461e0dcbf4d502"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mll-lab/laravel-graphql-playground/zipball/390b678a3e423d80d349e1fa61461e0dcbf4d502",
-                "reference": "390b678a3e423d80d349e1fa61461e0dcbf4d502",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.12"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "MLL\\GraphQLPlayground\\GraphQLPlaygroundServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "MLL\\GraphQLPlayground\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Benedikt Franke",
-                    "email": "benedikt@franke.tech"
-                }
-            ],
-            "description": "Easily integrate GraphQL Playground into your Laravel project",
-            "keywords": [
-                "graphql",
-                "graphql-playground",
-                "laravel"
-            ],
-            "time": "2018-09-19T08:57:32+00:00"
-        },
-        {
             "name": "monolog/monolog",
-            "version": "1.23.0",
+            "version": "1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
+                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
-                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
+                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
                 "shasum": ""
             },
             "require": {
@@ -870,7 +818,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-06-19T01:22:40+00:00"
+            "time": "2018-11-05T09:00:11+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -977,80 +925,6 @@
                 "php"
             ],
             "time": "2018-10-10T09:24:14+00:00"
-        },
-        {
-            "name": "nuwave/lighthouse",
-            "version": "v2.6.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nuwave/lighthouse.git",
-                "reference": "8412d702609b417fa9780a40bf93743a72275e97"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nuwave/lighthouse/zipball/8412d702609b417fa9780a40bf93743a72275e97",
-                "reference": "8412d702609b417fa9780a40bf93743a72275e97",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "illuminate/contracts": "5.5.*|5.6.*|5.7.*",
-                "illuminate/http": "5.5.*|5.6.*|5.7.*",
-                "illuminate/pagination": "5.5.*|5.6.*|5.7.*",
-                "illuminate/routing": "5.5.*|5.6.*|5.7.*",
-                "illuminate/support": "5.5.*|5.6.*|5.7.*",
-                "illuminate/validation": "5.5.*|5.6.*|5.7.*",
-                "opis/closure": "^3.0",
-                "php": ">= 7.0",
-                "webonyx/graphql-php": "^0.12"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.10",
-                "laravel/scout": "^4.0",
-                "mockery/mockery": "dev-master",
-                "orchestra/database": "3.5.*|3.6.*|3.7.*@dev",
-                "orchestra/testbench": "3.5.*|3.6.*|3.7.*"
-            },
-            "suggest": {
-                "mll-lab/laravel-graphql-playground": "GraphQL IDE for better development workflows - integrated with Laravel"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Nuwave\\Lighthouse\\Providers\\LighthouseServiceProvider"
-                    ],
-                    "aliases": {
-                        "graphql": "Nuwave\\Lighthouse\\GraphQL"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Nuwave\\Lighthouse\\": "src/"
-                },
-                "files": [
-                    "src/Support/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christopher Moore",
-                    "email": "chris@nuwavecommerce.com"
-                }
-            ],
-            "description": "Lighthouse is a schema first GraphQL package for Laravel applications.",
-            "keywords": [
-                "api",
-                "graphql",
-                "laravel",
-                "laravel-graphql"
-            ],
-            "time": "2018-11-02T21:21:48+00:00"
         },
         {
             "name": "opis/closure",
@@ -1457,6 +1331,82 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "rebing/graphql-laravel",
+            "version": "v1.15.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rebing/graphql-laravel.git",
+                "reference": "4be2acb6d17c1477e7e5997dad90fced4b704755"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rebing/graphql-laravel/zipball/4be2acb6d17c1477e7e5997dad90fced4b704755",
+                "reference": "4be2acb6d17c1477e7e5997dad90fced4b704755",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "laravel/framework": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "php": ">=5.5.9",
+                "webonyx/graphql-php": "~0.10.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.1.*|3.2.*|3.3.*|3.4.*|3.5.*",
+                "phpunit/phpunit": "^5.5|~6.0|~7.0"
+            },
+            "type": "project",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rebing\\GraphQL\\GraphQLServiceProvider"
+                    ],
+                    "aliases": {
+                        "GraphQL": "Rebing\\GraphQL\\Support\\Facades\\GraphQL"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Rebing\\GraphQL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Folklore",
+                    "email": "info@atelierfolklore.ca",
+                    "homepage": "http://atelierfolklore.ca"
+                },
+                {
+                    "name": "David Mongeau-Petitpas",
+                    "email": "dmp@atelierfolklore.ca",
+                    "homepage": "http://mongo.ca",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Rebing OÜ",
+                    "homepage": "http://www.rebing.ee",
+                    "role": "Company"
+                },
+                {
+                    "name": "Mikk Mihkel Nurges",
+                    "email": "mikk.nurges@rebing.ee",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel wrapper for PHP GraphQL",
+            "keywords": [
+                "framework",
+                "graphql",
+                "laravel",
+                "react"
+            ],
+            "time": "2018-11-01T09:34:56+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2488,26 +2438,25 @@
         },
         {
             "name": "webonyx/graphql-php",
-            "version": "v0.12.6",
+            "version": "v0.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webonyx/graphql-php.git",
-                "reference": "4c545e5ec4fc37f6eb36c19f5a0e7feaf5979c95"
+                "reference": "7cc863df37b2270ec2b57cb9d322da064d832a59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/4c545e5ec4fc37f6eb36c19f5a0e7feaf5979c95",
-                "reference": "4c545e5ec4fc37f6eb36c19f5a0e7feaf5979c95",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/7cc863df37b2270ec2b57cb9d322da064d832a59",
+                "reference": "7cc863df37b2270ec2b57cb9d322da064d832a59",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "php": ">=5.6"
+                "php": ">=5.5,<8.0-DEV"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.8",
-                "psr/http-message": "^1.0",
-                "react/promise": "2.*"
+                "psr/http-message": "^1.0"
             },
             "suggest": {
                 "psr/http-message": "To use standard GraphQL server",
@@ -2515,13 +2464,16 @@
             },
             "type": "library",
             "autoload": {
+                "files": [
+                    "src/deprecated.php"
+                ],
                 "psr-4": {
                     "GraphQL\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "BSD"
             ],
             "description": "A PHP port of GraphQL reference implementation",
             "homepage": "https://github.com/webonyx/graphql-php",
@@ -2529,7 +2481,7 @@
                 "api",
                 "graphql"
             ],
-            "time": "2018-09-02T14:59:54+00:00"
+            "time": "2017-08-30T16:33:58+00:00"
         }
     ],
     "packages-dev": [
