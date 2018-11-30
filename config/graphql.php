@@ -105,7 +105,7 @@ return [
                 'createUser' => 'App\GraphQL\Mutation\User\CreateUserMutation',
                 'createPost' => 'App\GraphQL\Mutation\Post\CreatePostMutation',
                 'login' => 'App\GraphQL\Mutation\Auth\LoginMutation',
-                
+                'logout' => 'App\GraphQL\Mutation\Auth\LogoutMutation',
             ],
             'middleware' => [],
             'method' => ['get', 'post'],
