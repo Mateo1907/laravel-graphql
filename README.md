@@ -2,6 +2,7 @@
 
 # Mutations 
 - Auth/LoginMutation - mutation for login. It returns <strong>token</strong>
+- Auth/LogoutMutation - it allows logout user
 - Post/CreatePostMutation - it allows creating post. Required authentication and editor role
 - User/CreateUserMutation - it allows creating user. It requireds only authentication
 
