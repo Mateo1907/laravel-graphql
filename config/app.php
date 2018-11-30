@@ -161,6 +161,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Rebing\GraphQL\GraphQLServiceProvider::class,
+        App\Providers\User\UserRepositoryServiceProvider::class,
+        App\Providers\User\UserServiceProvider::class,
+        App\Providers\Post\PostServiceProvider::class,
+        App\Providers\Post\PostRepositoryServiceProvider::class,
 
     ],
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\GraphQL\Query;
+namespace App\GraphQL\Query\User;
 
 use GraphQL;
 use GraphQL\Type\Definition\Type;
@@ -25,15 +25,17 @@ class UsersQuery extends Query
     {
         return [
             'id' => ['name' => 'id', 'type' => Type::string()],
-            'email' => ['name' => 'email', 'type' => Type::string()]
+            'email' => ['name' => 'email', 'type' => Type::string()],
         ];
     }
 
     public function resolve($root, $args, SelectFields $fields, ResolveInfo $info)
     {
-        // $select = $fields->getSelect();
-        // $with = $fields->getRelations();
+        $service = app()->make('UserService');
 
-        return User::all();
+        if (isset($args['id'])) {
+            return $service->where(['id' => $args['id']]);
+        }
+        return $service->all();
     }
 }

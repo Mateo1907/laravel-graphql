@@ -97,9 +97,12 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                'users' => 'App\GraphQL\Query\UsersQuery',
+                'users' => 'App\GraphQL\Query\User\UsersQuery',
+                'postsPaginate' => 'App\GraphQL\Query\Post\PostsPaginateQuery',
+                'posts' => 'App\GraphQL\Query\Post\PostsQuery'
             ],
             'mutation' => [
+                'createUser' => 'App\GraphQL\Mutation\User\CreateUserMutation',
             ],
             'middleware' => [],
             'method' => ['get', 'post'],
@@ -117,6 +120,7 @@ return [
     //
     'types' => [
         'user' => 'App\GraphQL\Type\UserType',
+        'post' => 'App\GraphQL\Type\PostType',
     ],
 
     // This callable will be passed the Error object for each errors GraphQL catch.
