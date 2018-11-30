@@ -12,10 +12,27 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testGraphQL()
     {
-        $response = $this->get('/');
+        $response = $this->call('GET','/graphql',[
+            'query' => "
+                query posts {
+                    postsPaginate(limit:5, page:2) {
+                        data{
+                            id,
+                            content
+                        },
+                        total,
+                        per_page,
+                        current_page
+                    }
+                }
+            "
+        ]);
 
         $response->assertStatus(200);
+        $this->assertObjectHasAttribute('data', $response->getData());
+        $this->assertInternalType('array', $response->getData()->data->postsPaginate->data);
+
     }
 }
