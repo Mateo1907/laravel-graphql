@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aff811f2ee53d73aa10bf857f2250438",
+    "content-hash": "6a62fae979a0d779ddacb64c390abd51",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -265,6 +265,71 @@
                 "validator"
             ],
             "time": "2018-09-25T20:47:26+00:00"
+        },
+        {
+            "name": "emadadly/laravel-uuid",
+            "version": "v1.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EmadAdly/laravel-uuid.git",
+                "reference": "be554d64e300ba8cf39d517227e82db309112a7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EmadAdly/laravel-uuid/zipball/be554d64e300ba8cf39d517227e82db309112a7d",
+                "reference": "be554d64e300ba8cf39d517227e82db309112a7d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "php": "~5.6|~7.0"
+            },
+            "require-dev": {
+                "laravel/framework": "5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "phpunit/phpunit": "5.5.*|7.0.*",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.1-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Emadadly\\LaravelUuid\\LaravelUuidServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Emadadly\\LaravelUuid\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emad Adly",
+                    "email": "thedevgist@gmail.com",
+                    "homepage": "http://devgist.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "laravel uuid a simple, automatic UUID generator for any model based on Laravel.",
+            "homepage": "https://github.com/emadadly/laravel-uuid",
+            "keywords": [
+                "Laravel UUID",
+                "emadadly",
+                "generator",
+                "guid",
+                "laravel",
+                "laravel-guid",
+                "laravel-uuid",
+                "uuid"
+            ],
+            "time": "2018-10-26T03:21:23+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -1534,6 +1599,71 @@
                 "react"
             ],
             "time": "2018-11-01T09:34:56+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "2.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "e4c3801008c2b4d1002b6b8c624a6a216d32f4f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/e4c3801008c2b4d1002b6b8c624a6a216d32f4f8",
+                "reference": "e4c3801008c2b4d1002b6b8c624a6a216d32f4f8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "~5.3.0|~5.4.0|~5.5.0|~5.6.0|~5.7.0",
+                "illuminate/container": "~5.3.0|~5.4.0|~5.5.0|~5.6.0|~5.7.0",
+                "illuminate/contracts": "~5.3.0|~5.4.0|~5.5.0|~5.6.0|~5.7.0",
+                "illuminate/database": "~5.4.0|~5.5.0|~5.6.0|~5.7.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.4.2|~3.5.0|~3.6.0|~3.7.0",
+                "phpunit/phpunit": "^5.7|6.2|^7.0",
+                "predis/predis": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 5.4 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "security",
+                "spatie"
+            ],
+            "time": "2018-11-30T07:29:54+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
