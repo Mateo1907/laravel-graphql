@@ -26,6 +26,9 @@ class UserType extends GraphQLType
                 'type' => Type::string(),
                 'description' => 'The email of user',
             ],
+            'name' => [
+                'type' => Type::string(),
+            ],
             'posts' => [
                 'type' => Type::listOf(GraphQL::type('post'))
             ]

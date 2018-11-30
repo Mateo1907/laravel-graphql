@@ -165,6 +165,7 @@ return [
         App\Providers\User\UserServiceProvider::class,
         App\Providers\Post\PostServiceProvider::class,
         App\Providers\Post\PostRepositoryServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
     ],
 

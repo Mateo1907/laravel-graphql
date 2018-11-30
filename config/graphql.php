@@ -99,10 +99,11 @@ return [
             'query' => [
                 'users' => 'App\GraphQL\Query\User\UsersQuery',
                 'postsPaginate' => 'App\GraphQL\Query\Post\PostsPaginateQuery',
-                'posts' => 'App\GraphQL\Query\Post\PostsQuery'
+                'posts' => 'App\GraphQL\Query\Post\PostsQuery',
             ],
             'mutation' => [
                 'createUser' => 'App\GraphQL\Mutation\User\CreateUserMutation',
+                'login' => 'App\GraphQL\Mutation\Auth\LoginMutation'
             ],
             'middleware' => [],
             'method' => ['get', 'post'],

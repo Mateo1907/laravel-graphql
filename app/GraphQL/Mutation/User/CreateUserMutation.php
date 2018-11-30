@@ -18,6 +18,11 @@ class CreateUserMutation extends Mutation
     {
         return \GraphQL::type('user');
     }
+    
+    public function authorize(array $args)
+    {
+        return (bool)auth()->user();
+    }
 
     public function args()
     {
@@ -41,7 +46,7 @@ class CreateUserMutation extends Mutation
     {
         $userService = app()->make('UserService');
 
-        return $userService->createUser([
+        return $userService->create([
             'email' => $args['email'],
             'name' => $args['name'],
             'password' => \Hash::make($args['password'])
