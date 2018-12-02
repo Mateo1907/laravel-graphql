@@ -39,9 +39,22 @@ class LoginMutation extends Mutation
         ];
     }
 
+    public function rules(array $args = [])
+    {
+        return [
+            'email' => [
+                'required',
+                'email'
+            ],
+            'password' => [
+                'required'
+            ]
+        ];
+    }
+
     public function resolve($root, $args, SelectFields $fields, ResolveInfo $info)
     {
-        return \Auth::guard()->attempt([
+        return auth()->guard()->attempt([
             'email' => $args['email'], 
             'password' => $args['password']
         ]);

@@ -16,11 +16,12 @@ class ExampleTest extends TestCase
     {
         $response = $this->call('GET','/graphql',[
             'query' => "
-                query posts {
-                    postsPaginate(limit:5, page:2) {
+                query users {
+                    users(perPage:5, page:1) {
                         data{
                             id,
-                            content
+                            user_name,
+                            email
                         },
                         total,
                         per_page,
@@ -32,7 +33,7 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertObjectHasAttribute('data', $response->getData());
-        $this->assertInternalType('array', $response->getData()->data->postsPaginate->data);
+        $this->assertInternalType('array', $response->getData()->data->users->data);
 
     }
 }

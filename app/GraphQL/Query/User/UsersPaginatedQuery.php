@@ -9,7 +9,7 @@ use Rebing\GraphQL\Support\SelectFields;
 use Rebing\GraphQL\Support\Query;
 use App\User;
 
-class UsersQuery extends Query
+class UsersPaginatedQuery extends Query
 {
     protected $attributes = [
         'name' => 'UsersQuery',
@@ -18,14 +18,20 @@ class UsersQuery extends Query
 
     public function type()
     {
-        return Type::listOf(GraphQL::type('user'));
+        return GraphQL::paginate('user');
     }
 
     public function args()
     {
         return [
-            'id' => ['name' => 'id', 'type' => Type::string()],
-            'email' => ['name' => 'email', 'type' => Type::string()],
+            'perPage' => [
+                'name' => 'perPage',
+                'type' => Type::int()
+            ],
+            'page' => [
+                'name' => 'page',
+                'type' => Type::int()
+            ]
         ];
     }
 
@@ -33,9 +39,11 @@ class UsersQuery extends Query
     {
         $service = app()->make('UserService');
 
-        if (isset($args['id'])) {
-            return $service->where(['id' => $args['id']]);
+        if (!count($args)) {
+            $args['perPage'] = 10;
+            $args['page'] = 1;
         }
-        return $service->all();
+
+        return $service->paginate($args['perPage'], ['*'], 'page', $args['page']);
     }
 }

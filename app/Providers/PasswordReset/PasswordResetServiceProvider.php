@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Providers\Post;
+namespace App\Providers\PasswordReset;
 
-use App\Services\PostService;
-use App\Repositories\PostRepository;
+use App\Services\PasswordResetService;
 use Illuminate\Support\ServiceProvider;
 
-class PostServiceProvider extends ServiceProvider
+class PasswordResetServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
@@ -25,8 +24,8 @@ class PostServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('PostService', function($app){
-            return new PostService($app->make('PostRepository'));
+        $this->app->bind('PasswordResetService', function($app){
+            return new PasswordResetService($app->make('PasswordResetRepository'));
         });
     }
 }
