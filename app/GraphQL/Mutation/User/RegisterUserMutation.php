@@ -7,21 +7,16 @@ use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
 use Rebing\GraphQL\Support\SelectFields;
 
-class CreateUserMutation extends Mutation
+class RegisterUserMutation extends Mutation
 {
     protected $attributes = [
-        'name' => 'CreateUserMutation',
+        'name' => 'RegisterUserMutation',
         'description' => 'A mutation'
     ];
 
     public function type()
     {
         return \GraphQL::type('user');
-    }
-    
-    public function authorize(array $args)
-    {
-        return (bool)auth()->user();
     }
 
     public function args()
@@ -31,13 +26,38 @@ class CreateUserMutation extends Mutation
                 'name' => 'email',
                 'type' => Type::nonNull(Type::string())
             ],
-            'name' => [
-                'name' => 'name',
+            'userName' => [
+                'name' => 'userName',
                 'type' => Type::nonNull(Type::string())
             ],
             'password' => [
                 'name' => 'password',
                 'type' => Type::nonNull(Type::string())
+            ],
+            'confirmPassword' => [
+                'name' => 'confirmPassword',
+                'type' => Type::nonNull(Type::string())
+            ]
+        ];
+    }
+
+    public function rules(array $args = [])
+    {
+        return [
+            'email' => [
+                'required',
+                'email',
+                'unique:users,email'
+            ],
+            'userName' => [
+                'required'
+            ],
+            'password' =>[
+                'required'
+            ],
+            'confirmPassword' => [
+                'required',
+                'same:password'
             ]
         ];
     }
@@ -46,10 +66,12 @@ class CreateUserMutation extends Mutation
     {
         $userService = app()->make('UserService');
 
-        return $userService->create([
+        $payload = [
             'email' => $args['email'],
-            'name' => $args['name'],
+            'user_name' => $args['userName'],
             'password' => \Hash::make($args['password'])
-        ]);
+        ];
+
+        return $userService->register($payload);
     }
 }

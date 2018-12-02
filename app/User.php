@@ -21,7 +21,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'user_name', 'email', 'password', 'last_login',
     ];
 
     /**
@@ -35,10 +35,6 @@ class User extends Authenticatable implements JWTSubject
 
     protected $guard_name = 'api';
 
-    public function posts()
-    {
-        return $this->hasMany('App\Post', 'user_id', 'id');
-    }
 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
@@ -58,5 +54,15 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function emails()
+    {
+        return $this->hasMany('App\Email', 'user_id', 'id');
+    }
+
+    public function passwordResets()
+    {
+        return $this->hasMany('App\PasswordReset', 'user_id', 'id');
     }
 }

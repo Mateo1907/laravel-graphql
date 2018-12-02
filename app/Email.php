@@ -4,15 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Emadadly\LaravelUuid\Uuids;
-class Post extends Model
+
+class Email extends Model
 {
     use Uuids;
 
+    protected $table = 'emails_queue';
     public $incrementing = false;
-    protected $table = 'posts';
     protected $fillable = [
         'user_id',
-        'content'
+        'recipient',
+        'subject',
+        'content',
+        'sent',
+        'to_send_at',
+        'sent_at',
+        'vendor_response'
     ];
 
     public function user()

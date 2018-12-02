@@ -14,6 +14,11 @@ class LogoutMutation extends Mutation
         'description' => 'A mutation'
     ];
 
+    public function authorize(array $args)
+    {
+        return (bool)auth()->user();
+    }
+
     public function type()
     {
         return Type::boolean();

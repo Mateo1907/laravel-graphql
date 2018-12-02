@@ -1,11 +1,11 @@
 <?php
 
+use App\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Spatie\Permission\Models\Role;
 
-class AddRoles extends Migration
+class AddAdminUser extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,13 @@ class AddRoles extends Migration
      */
     public function up()
     {
-        Role::create([
-            'name' => 'admin'
+        $user = User::create([
+            'user_name' => 'Admin',
+            'email' => 'admin@madmountain.pl',
+            'password' => \Hash::make('5G4sd8qLVbknQLa9')
         ]);
+
+        $user->assignRole('admin');
     }
 
     /**
@@ -26,6 +30,6 @@ class AddRoles extends Migration
      */
     public function down()
     {
-        Role::whereName('admin')->delete();
+        User::whereName('Admin')->firstOrFail()->delete();
     }
 }

@@ -159,6 +159,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\HorizonServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Rebing\GraphQL\GraphQLServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
@@ -169,8 +170,8 @@ return [
          */
         App\Providers\User\UserRepositoryServiceProvider::class,
         App\Providers\User\UserServiceProvider::class,
-        App\Providers\Post\PostServiceProvider::class,
-        App\Providers\Post\PostRepositoryServiceProvider::class,
+        App\Providers\PasswordReset\PasswordResetRepositoryServiceProvider::class,
+        App\Providers\PasswordReset\PasswordResetServiceProvider::class,
 
     ],
 
